@@ -1,5 +1,5 @@
 {
-    const headset = /Headset/.test(global("PACTIVE"))
+    const PACTIVE = global("PACTIVE")
     const trigger = local("trigger")
 
     let volm, vola, voln, volr
@@ -14,19 +14,20 @@
         case "~headset":
             volm = 0
             break
-        case "outdoor":
-            vola = 7, voln = 7, volr = 7
-            break
-        case "home":
-            vola = 5, voln = 5, volr = 5
-            break
-        case "work":
-            vola = 5, voln = 0, volr = 5
-            break
-        default:
     }
 
-    if (headset) {
+    if (/Outdoor/.test(PACTIVE)) {
+        vola = 7, voln = 7, volr = 7
+    } else if (/At Home/.test(PACTIVE)) {
+        vola = 5, voln = 5, volr = 5
+    } else if (/At Work/.test(PACTIVE)) {
+        vola = 5, voln = 0, volr = 5
+    } else {
+        vola = global("VOLA")
+        voln = global("VOLN")
+        volr = global("VOLR")
+    }
+    if (/Headset/.test(PACTIVE)) {
         volm = Math.min(volm, 8)
         vola = Math.min(vola, 4)
         voln = Math.min(voln, 4)
