@@ -72,7 +72,7 @@ function as_cst(s) {
     return Date.parse(s + "T00:00:00+0800")
 }
 
-let next_holiday = data.filter(i =>
+const next_holiday = data.filter(i =>
     (i.type == "holiday" && now < as_cst(i.range[0]))
 ).reduce((a, b) =>
     as_cst(a.range[0]) < as_cst(b.range[0]) ? a : b

@@ -72,7 +72,7 @@ function as_cst(s) {
     return Date.parse(s + "T00:00:00+0800")
 }
 
-let match = function () {
+const match = function () {
     for (let item of data) {
         const day = 24 * 3600 * 1000
         let start = as_cst(item.range[0])
@@ -88,7 +88,7 @@ let match = function () {
     }
 }()
 
-let weekday = now.getDay()
+const weekday = now.getDay()
 let result = "workingday", reason = "平日"
 if ((weekday === 6) || (weekday === 0)) {
     result = "holiday"
