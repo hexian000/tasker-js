@@ -93,7 +93,7 @@ if (next_holiday) {
     }
     if (cd_hour > 0) {
         message += ` ${cd_hour} 小时`
-    } else {
+    } else if (cd_day === 0) {
         message += `不到 1 小时`
     }
 }
