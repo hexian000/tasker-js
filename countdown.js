@@ -1,4 +1,4 @@
-var data = [
+const data = [
     {
         "name": "元旦",
         "range": ["2020-01-01"],
@@ -66,27 +66,27 @@ var data = [
     }
 ]
 
-var date = new Date();
+const now = new Date()
 
 function as_cst(s) {
-    return Date.parse(s + "T00:00:00+0800");
+    return Date.parse(s + "T00:00:00+0800")
 }
 
-var next_holiday = data.filter(i =>
-    (i.type == "holiday" && date < as_cst(i.range[0]))
+let next_holiday = data.filter(i =>
+    (i.type == "holiday" && now < as_cst(i.range[0]))
 ).reduce((a, b) =>
     as_cst(a.range[0]) < as_cst(b.range[0]) ? a : b
-);
+)
 
-var result, reason, message;
+let result, reason, message
 if (next_holiday) {
-    reason = next_holiday.name;
-    var t = as_cst(next_holiday.range[0]) - date;
-    const hour = 3600 * 1000;
-    const day = 24 * hour;
-    result = Math.ceil(t / day);
-    cd_day = Math.floor(t / day);
-    cd_hour = Math.floor(t / hour) % 24;
+    reason = next_holiday.name
+    let t = as_cst(next_holiday.range[0]) - now
+    const hour = 3600 * 1000
+    const day = 24 * hour
+    result = Math.ceil(t / day)
+    cd_day = Math.floor(t / day)
+    cd_hour = Math.floor(t / hour) % 24
     message = `离 ${reason} 还有`
     if (cd_day > 0) {
         message += ` ${cd_day} 天`
@@ -98,6 +98,6 @@ if (next_holiday) {
     }
 }
 
-setLocal("countdown", result);
-setLocal("message", message);
-setLocal("reason", reason);
+setLocal("countdown", result)
+setLocal("message", message)
+setLocal("reason", reason)

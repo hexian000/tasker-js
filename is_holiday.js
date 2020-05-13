@@ -1,4 +1,4 @@
-var data = [
+const data = [
     {
         "name": "元旦",
         "range": ["2020-01-01"],
@@ -66,38 +66,38 @@ var data = [
     }
 ]
 
-var date = new Date();
+const now = new Date()
 
 function as_cst(s) {
-    return Date.parse(s + "T00:00:00+0800");
+    return Date.parse(s + "T00:00:00+0800")
 }
 
-var match = function () {
-    for (var i = 0; i < data.length; i++) {
-        const day = 24 * 3600 * 1000;
-        var start = as_cst(data[i].range[0]);
-        var end = as_cst(data[i].range[1]);
+let match = function () {
+    for (let item of data) {
+        const day = 24 * 3600 * 1000
+        let start = as_cst(item.range[0])
+        let end = as_cst(item.range[1])
         if (end) {
-            end += day;
+            end += day
         } else {
-            end = start + day;
+            end = start + day
         }
-        if (date >= start && date < end) {
-            return data[i];
+        if (now >= start && now < end) {
+            return item
         }
     }
-}();
+}()
 
-var weekday = date.getDay();
-var result = "workingday", reason = "平日";
+let weekday = now.getDay()
+let result = "workingday", reason = "平日"
 if ((weekday === 6) || (weekday === 0)) {
-    result = "holiday";
-    reason = "周末";
+    result = "holiday"
+    reason = "周末"
 }
 if (match) {
-    result = match.type;
-    reason = match.name;
+    result = match.type
+    reason = match.name
 }
 
-setLocal("is_holiday", result == "holiday" ? 1 : 0);
-setLocal("reason", reason);
+setLocal("is_holiday", result == "holiday" ? 1 : 0)
+setLocal("reason", reason)
