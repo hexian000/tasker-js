@@ -21,32 +21,32 @@
     }
 
     if (/Headset/.test(PACTIVE)) {
-        if (volm) {
+        if (volm !== undefined) {
             volm = Math.min(volm, 13)
         }
-        if (vola) {
+        if (vola !== undefined) {
             vola = Math.min(vola, 4)
         }
-        if (voln) {
+        if (voln !== undefined) {
             voln = Math.min(voln, 4)
         }
-        if (volr) {
+        if (volr !== undefined) {
             volr = Math.min(volr, 4)
         }
     }
 
     flash(`volm ${volm}\nvola ${vola}\nvoln ${voln}\nvolr ${volr}`)
 
-    if (volm) {
+    if (volm !== undefined) {
         mediaVol(volm, false, false)
     }
-    if (vola) {
+    if (vola !== undefined) {
         alarmVol(vola, false, false)
     }
-    if (voln) {
+    if (voln !== undefined) {
         notificationVol(voln, false, false)
     }
-    if (volr) {
+    if (volr !== undefined) {
         ringerVol(volr, false, false)
     }
 }
