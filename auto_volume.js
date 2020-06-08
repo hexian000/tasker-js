@@ -2,6 +2,8 @@
     const PACTIVE = global("PACTIVE")
     const trigger = local("trigger")
 
+    let volm, vola, voln, volr
+
     switch (trigger) {
         case "headset":
             break
@@ -9,8 +11,6 @@
             volm = 0
             break
     }
-
-    let volm, vola, voln, volr
 
     if (/Outdoor/.test(PACTIVE)) {
         vola = 7, voln = 7, volr = 7
@@ -21,32 +21,32 @@
     }
 
     if (/Headset/.test(PACTIVE)) {
-        if (volm) {
+        if (typeof (volm) == "number") {
             volm = Math.min(volm, 13)
         }
-        if (vola) {
+        if (typeof (vola) == "number") {
             vola = Math.min(vola, 4)
         }
-        if (voln) {
+        if (typeof (voln) == "number") {
             voln = Math.min(voln, 4)
         }
-        if (volr) {
+        if (typeof (volr) == "number") {
             volr = Math.min(volr, 4)
         }
     }
 
     flash(`volm ${volm}\nvola ${vola}\nvoln ${voln}\nvolr ${volr}`)
 
-    if (volm) {
+    if (typeof (volm) == "number") {
         mediaVol(volm, false, false)
     }
-    if (vola) {
+    if (typeof (vola) == "number") {
         alarmVol(vola, false, false)
     }
-    if (voln) {
+    if (typeof (voln) == "number") {
         notificationVol(voln, false, false)
     }
-    if (volr) {
+    if (typeof (volr) == "number") {
         ringerVol(volr, false, false)
     }
 }
