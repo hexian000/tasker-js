@@ -70,7 +70,7 @@ const hour = 3600 * 1000
 const day = 24 * hour
 const now = new Date()
 /* 倒计时到前一天晚上18点 */
-const off_time = (24 - 18) * 3600 * 1000;
+const off_time = (24 - 18) * hour;
 
 function as_cst(s) {
     return Date.parse(s + "T00:00:00+0800")
