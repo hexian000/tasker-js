@@ -6,6 +6,7 @@
 
     switch (trigger) {
         case "headset":
+            volm = parseInt(global("VOLM"))
             break
         case "~headset":
             volm = 0
@@ -22,7 +23,7 @@
 
     if (/Headset/.test(PACTIVE)) {
         if (typeof (volm) == "number") {
-            volm = Math.min(volm, 13)
+            volm = Math.min(volm, 9)
         }
         if (typeof (vola) == "number") {
             vola = Math.min(vola, 4)
