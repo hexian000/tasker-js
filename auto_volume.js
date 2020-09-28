@@ -23,7 +23,7 @@
 
     if (/Headset/.test(PACTIVE)) {
         if (typeof (volm) == "number") {
-            volm = Math.min(volm, 9)
+            volm = Math.min(volm, 10)
         }
         if (typeof (vola) == "number") {
             vola = Math.min(vola, 4)

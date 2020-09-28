@@ -95,11 +95,17 @@ if (next_holiday) {
     message = `离 ${reason} 还有`
     if (cd_day > 0) {
         message += ` ${cd_day} 天`
-    }
-    if (cd_hour > 0) {
-        message += ` ${cd_hour} 小时`
-    } else if (cd_day == 0) {
-        message += `整`
+        if (cd_hour > 0) {
+            message += ` ${cd_hour} 小时`
+        } else {
+            message += `整`
+        }
+    } else {
+        if (cd_hour > 0) {
+            message += ` ${cd_hour} 小时`
+        } else {
+            message += `不到 1 小时`
+        }
     }
 }
 
