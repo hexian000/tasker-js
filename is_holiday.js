@@ -1,68 +1,78 @@
 const data = [
     {
         "name": "元旦",
-        "range": ["2020-01-01"],
+        "range": ["2021-01-01"],
         "type": "holiday"
     },
     {
         "name": "春节",
-        "range": ["2020-01-19"],
+        "range": ["2021-02-07"],
         "type": "workingday"
     },
     {
         "name": "春节",
-        "range": ["2020-01-24", "2020-01-30"],
+        "range": ["2021-02-11", "2021-02-17"],
         "type": "holiday"
     },
     {
         "name": "春节",
-        "range": ["2020-02-01"],
+        "range": ["2021-02-20"],
         "type": "workingday"
     },
     {
         "name": "清明节",
-        "range": ["2020-04-04", "2020-04-06"],
+        "range": ["2021-04-05"],
         "type": "holiday"
     },
     {
         "name": "劳动节",
-        "range": ["2020-04-26"],
+        "range": ["2021-04-25"],
         "type": "workingday"
     },
     {
         "name": "劳动节",
-        "range": ["2020-05-01", "2020-05-05"],
+        "range": ["2021-05-01", "2021-05-05"],
         "type": "holiday"
     },
     {
         "name": "劳动节",
-        "range": ["2020-05-09"],
+        "range": ["2021-05-08"],
         "type": "workingday"
     },
     {
         "name": "端午节",
-        "range": ["2020-06-25", "2020-06-27"],
+        "range": ["2021-06-14"],
         "type": "holiday"
     },
     {
-        "name": "端午节",
-        "range": ["2020-06-28"],
+        "name": "中秋节",
+        "range": ["2021-09-18"],
         "type": "workingday"
     },
     {
-        "name": "中秋节/国庆节",
-        "range": ["2020-09-27"],
-        "type": "workingday"
-    },
-    {
-        "name": "中秋节/国庆节",
-        "range": ["2020-10-01", "2020-10-08"],
+        "name": "中秋节",
+        "range": ["2021-9-20", "2021-9-21"],
         "type": "holiday"
     },
     {
-        "name": "中秋节/国庆节",
-        "range": ["2020-10-10"],
+        "name": "国庆节",
+        "range": ["2021-09-26"],
         "type": "workingday"
+    },
+    {
+        "name": "国庆节",
+        "range": ["2021-10-01","2021-10-7"],
+        "type": "holiday"
+    },
+    {
+        "name": "国庆节",
+        "range": ["2021-10-9"],
+        "type": "workingday"
+    },
+      {
+        "name": "元旦",
+        "range": ["2022-01-01"],
+        "type": "holiday"
     }
 ]
 
