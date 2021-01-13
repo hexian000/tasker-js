@@ -36,7 +36,7 @@
         }
     }
 
-    flash(`volm ${volm}\nvola ${vola}\nvolr ${volr}\voln ${voln}`)
+    flash(`volm ${volm}\nvola ${vola}\nvolr ${volr}\nvoln ${voln}`)
 
     if (typeof (volm) == "number") {
         mediaVol(volm, false, false)
