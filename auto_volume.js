@@ -14,11 +14,11 @@
     }
 
     if (/Outdoor/.test(PACTIVE)) {
-        vola = 7, volr = 7
+        vola = 7, volr = 7, voln = 7
     } else if (/At Home/.test(PACTIVE)) {
-        vola = 5, volr = 5
+        vola = 5, volr = 5, voln = 5
     } else if (/At Work/.test(PACTIVE)) {
-        vola = 5, volr = 5
+        vola = 5, volr = 5, voln = 0
     }
 
     if (/Headset/.test(PACTIVE)) {
@@ -31,15 +31,21 @@
         if (typeof (volr) == "number") {
             volr = Math.min(volr, 4)
         }
+        if (typeof (voln) == "number") {
+            voln = Math.min(voln, 4)
+        }
     }
 
-    flash(`volm ${volm}\nvola ${vola}\nvolr ${volr}`)
+    flash(`volm ${volm}\nvola ${vola}\nvolr ${volr}\voln ${voln}`)
 
     if (typeof (volm) == "number") {
         mediaVol(volm, false, false)
     }
     if (typeof (vola) == "number") {
         alarmVol(vola, false, false)
+    }
+    if (typeof (voln) == "number") {
+        notificationVol(voln, false, false)
     }
     if (typeof (volr) == "number") {
         ringerVol(volr, false, false)
