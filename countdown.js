@@ -61,7 +61,7 @@ const data = [
     },
     {
         "name": "国庆节",
-        "range": ["2021-10-01","2021-10-07"],
+        "range": ["2021-10-01", "2021-10-07"],
         "type": "holiday"
     },
     {
@@ -69,7 +69,7 @@ const data = [
         "range": ["2021-10-09"],
         "type": "workingday"
     },
-      {
+    {
         "name": "元旦",
         "range": ["2022-01-01"],
         "type": "holiday"
