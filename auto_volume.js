@@ -16,9 +16,9 @@
     if (/Outdoor/.test(PACTIVE)) {
         vola = 7, volr = 7, voln = 7
     } else if (/At Home/.test(PACTIVE)) {
-        vola = 5, volr = 5, voln = 5
+        vola = 3, volr = 3, voln = 3
     } else if (/At Work/.test(PACTIVE)) {
-        vola = 5, volr = 5, voln = 0
+        vola = 3, volr = 3, voln = 0
     }
 
     if (/Headset/.test(PACTIVE)) {
